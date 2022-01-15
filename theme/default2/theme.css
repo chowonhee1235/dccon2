@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*
  (c) 2018 kuriyama hibiya <kuriyama@hibiya.moe>
  licensed under MIT license
@@ -7,10 +7,10 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 
 @font-face {
-  font-family: 'nanumsq';
+  font-family: 'SeoulNamsan';
   font-style: regular;
   font-weight: 300;
-  src: local('나눔고딕'), url('../_shared/fonts/nanumsq.ttf');
+  src: local('서울남산체 L'), url('../_shared/fonts/SeoulNamsanL.otf');
 }
 @font-face {
   font-family: 'SeoulNamsan';
@@ -27,7 +27,7 @@ html {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: 'Lato', 'nanumsq', sans-serif;
+  font-family: 'Lato', 'SeoulNamsan', sans-serif;
 }
 body {
   position: absolute;
@@ -46,24 +46,29 @@ body {
   margin: 0.25rem 0;
   padding: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.55);
+  background-color: rgba(0,0,0,.55)!important;
   text-shadow: 0 0 0.25rem #000, 0 0 0.125rem #000, 0 0 0.125rem #000, 0 0 0.125rem #000;
   position: relative;
   overflow: hidden;
+}
+.chat_upper_box {
+  position: relative;
+  padding: 0.25rem;
+  background: rgba(0, 84, 255, 0.125);
 }
 /* Nickname / Badge */
 .chat_upper_box {
   position: relative;
   padding: 0.25rem;
-  background-color: rgba(255,255,255,255.55)!important;
+  background: rgba(0, 0, 0, 0.125);
   display: flex;
   z-index: 10;
-  text-align: center;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAIAAABbzbuTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxOTMzRjQxMDk0QjYxMUU5OTVGN0Q0MDIxRUM5RjhFNCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOTMzRjQxMTk0QjYxMUU5OTVGN0Q0MDIxRUM5RjhFNCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjE5MzNGNDBFOTRCNjExRTk5NUY3RDQwMjFFQzlGOEU0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE5MzNGNDBGOTRCNjExRTk5NUY3RDQwMjFFQzlGOEU0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+MSFe3AAAAhtJREFUeNp8ks9rE1EQx9+8fbubzWYTIW1TY6Q91VZExJ8HLxUpghdPggcv/gn+Bd4Fb3pR8CZYUBFPKkGKP8BKkWAhNsQ0h6TEpEmabJpsNrv7nrNJjTEG5zB83s6bed+ZHThz+eqCWAnRKQDieZwQAki//dDwyDnvEpOFRVwX01pQXjp92HM5mWR4GygUsvVqBdgMOYafzi3P37x9nvzX1l5lntz/TLE8HhzHG40JIYbM+QHvVpqoinJwxyplNysvHqV2thvIqU9F5Fq5jawocl/a382hpTd+vn6azmdqyOvJ/JvVdKXYQg6oqkQlyiRpLEFWKHrjUAB9NKajlxgdhCia9E+C259Vq9FFX6920A/GLbg/rgkJU7FQLBE2IirybCI8ezSsGwpyKKJSCgwbH0s4dTExvxidOWIgr1xfOrs8Nx0PIe83bacnmOM6KJuOtB40lGC/JJqmy5oeQfixufv22XcODvU8/w8oKvszeE+MvZnfqj24s9ba62bcpC8Jm/i2XrTvuuaeNbcQvXbrZLloPn+YohKoGsNeNz7mnA5kIWlCiUlExhrVUrtayg2EnrgQf/k4tfW1PLpNeLsBBZ9uXLrHSEAQDoRqNCzLKFpu1i0PbFvsS6Bw4RXgSxN2BqksS98BwY6FQvTj8pWeDT3btWhtm3zogeWHgDjEGr7FXNI9WDhcQdrRlICrmrn2e4s0Ju7sLwEGAO7J19sEWmgbAAAAAElFTkSuQmCC');  
-  background-repeat: no-repeat;
-  background-position: center;
 }
 .chat_nickname_box {
+  display: flex;
+  flex-grow: 1;
+  padding: 0 0.25rem;
+  font-weight: 600;
   display: none;
 }
 .chat_badge_box {
@@ -79,6 +84,12 @@ body {
   margin: 0 0 0 0.1rem;
   border: 0.125rem solid rgba(0, 0, 0, 0.5);
 }
+.chat_nickname_box {
+  content:"방장";
+  padding: 0 0.25rem;
+  font-weight: 600;
+}
+
 /* Messages */
 .chat_lower_box {
   position: relative;
@@ -87,7 +98,7 @@ body {
 .chat_msg_box {
   padding: 0.25rem 0.5rem;
   max-height: 14rem; /* 텍스트 영역 최대 높이 */
-  font-size: 30.5!important;
+  font-size: 0.9rem;
 }
 .chat_msg_box.image_only {
   text-align: center;
@@ -107,7 +118,7 @@ body {
   height: 2rem;
 }
 .dccon {
-  height: 7.40rem;
+  height: 6.25rem;
 }
 
 /* Special Cases */

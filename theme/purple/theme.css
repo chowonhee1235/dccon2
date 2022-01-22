@@ -7,16 +7,16 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 
 @font-face {
-  font-family: 'NanumGothic';
-  font-style: regular;
-  font-weight: 300;
-  src: local('나눔고딕'), url('../_shared/fonts/NanumGothic.ttf');
+ font-family: 'BMJUA';
+ src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+ font-weight: normal;
+ font-style: normal;
 }
 @font-face {
-  font-family: 'NanumGothicBold';
-  font-style: regular;
-  font-weight: 600;
-  src: local('나눔고딕'), url('../_shared/fonts/NanumGothicBold.ttf');
+ font-family: 'BMJUA';
+ src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff') format('woff');
+ font-weight: normal;
+ font-style: normal;
 }
 
 * {
@@ -27,7 +27,7 @@ html {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  font-family: 'NanumGothicBold', 'NanumGothic', sans-serif;
+  font-family: 'BMJUA', 'BMJUA', sans-serif;
 }
 body {
   position: absolute;
@@ -46,8 +46,12 @@ body {
   margin: 0.25rem 0;
   padding: 0;
   width: 100%;
-  background-color: rgba(0,0,0,.55)!important;
-  text-shadow: 0 0 0.25rem #000, 0 0 0.125rem #000, 0 0 0.125rem #000, 0 0 0.125rem #000;
+  background-color:#B5B2FF!important;
+  border-top: #000000 solid 3px;
+  border-left: #000000 solid 3px;
+  border-bottom: #000000 solid 3px;
+  border-right: #000000 solid 3px;
+  border-radius: 7px 7px 7px 7px;
   position: relative;
   overflow: hidden;
 }
@@ -85,12 +89,12 @@ body {
 /* Messages */
 .chat_lower_box {
   position: relative;
-  color: #fff;
+  color:#000000!important;
 }
 .chat_msg_box {
   padding: 0.25rem 0.5rem;
   max-height: 15rem; /* 텍스트 영역 최대 높이 */
-  font-size: 19px;
+  font-size: 17px;
 }
 .chat_msg_box.image_only {
   text-align: center;

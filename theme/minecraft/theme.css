@@ -1,0 +1,182 @@
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+* {
+  box-sizing: border-box;
+}
+html {
+overflow: hidden;
+	font-family: NanumGothic, dotum, serif;
+	font-size: 16px;
+	color: #000000;
+}
+body {
+	position: absolute;
+	margin: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+#chat_wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5rem;
+  word-wrap: break-word;
+}
+.chat_outer_box {
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+	margin-top: 8px;
+	padding: 4px;
+	line-height: 1;
+}
+/* Nickname / Badge */
+.chat_upper_box {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	font-size: 18px;
+	font-weight: bold;
+                 color: #fffff;
+	text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
+	vertical-align: middle;
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAoCAYAAABOzvzpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjQ0QzcxNzkxQTIyRDExRTg4MTE4OEI0QzI1MTI3QTNBIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjQ0QzcxNzkyQTIyRDExRTg4MTE4OEI0QzI1MTI3QTNBIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6NDRDNzE3OEZBMjJEMTFFODgxMTg4QjRDMjUxMjdBM0EiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6NDRDNzE3OTBBMjJEMTFFODgxMTg4QjRDMjUxMjdBM0EiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz46k6fcAAACM0lEQVR42uxZTS8DURSdac20MzRoJS39IIpESCysLey7smJpa2MhEX9BsLBh6Udgbc2KsCEiQlVbdCod05oxre2cu3jSICRz7+68mXnv9aTn3Hvfk9cO51qSJ1zX9UKpVjMlUWhaGHC1+go4EukCHI1GATcaDcCmieu5bhNwIBAQfm8YVcDpdBJwKBTC+SSfBxPgdwI6SqUyDPT0dANOJOKAi8WSJPIMqvl8vtDWhup11HRnpw5Y13Xh+qnUAOD3dxtwq9XifwATwAR4PCAcxjxu2w7g+/v8t/Ls2NiI1E6doSgK4GAwCJh61nfrDJYAE+B3D1CUjl/Ns1Tj/63OYAkwAX73AJr3bfv1R/t96ik0D/91ncESYAL87gGqqgg1Qz1gcDAjzNuVSkW4YKFQFNYVtP83zTdhnUE9hu6f/j7qeSwBJoDPA8Jt9QJU8zRo/07rBqr5r/r3ZhPvBRznQ6h5x0GNl8tPwrqCJcAE+N0DZFmGAcuyUDMR7NcjOrlbI3d1F5vnB6Dxpf4czl8nGr4DPJ2dRA/SYtj/m2VSdxjCOkJVVeIpfC/ABDABXg+Ih3ph4GT9CjQ8tTUOGj6+PBX21zRonVHZeYT5M6ujMP+LW8M6IYDnDdlYGs8TNq5hPmvBymEvo+F5wy6uzxJgAnwe8vzMxL53oG9qFl54PjsSTpBcGQbNPWzdHLSzAW2xF76v7xnwfXw5A89L23fwfCiBHnZbNITr0fdZAkyAz+NTgAEAs0bwHsC1WWwAAAAASUVORK5CYII=);
+	background-repeat-y: no-repeat;
+}
+.chat_nickname_box {
+	display: inline-block;
+                 color: #fffff;
+}
+.chat_badge_box {
+	display: inline-block;
+	float: right;
+}
+.chat_outer_box .chat_msg_box,
+.chat_lower_box	{
+	clear: right;
+}
+.chat_badge_box > img {
+  width: 1.375rem;
+  height: 1.375rem;
+  margin: 0 0 0 0.1rem;
+  border: 0.125rem solid rgba(0, 0, 0, 0.5);
+  display: none;
+}
+/* Messages */
+.chat_lower_box {
+	background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAA8CAYAAADWibxkAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyBpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBXaW5kb3dzIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjhCOTlCQTVFQTIyQzExRThBNjlBOTk4NENBOTJCRjVFIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjhCOTlCQTVGQTIyQzExRThBNjlBOTk4NENBOTJCRjVFIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OEI5OUJBNUNBMjJDMTFFOEE2OUE5OTg0Q0E5MkJGNUUiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OEI5OUJBNURBMjJDMTFFOEE2OUE5OTg0Q0E5MkJGNUUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7XFCAuAAACBklEQVR42uybMUsDQRCFNxI7MZwIahEMprKKiKWCdoK1fX6GP8f/IAE7BcFKJKmsLihBEiEoVtoItjcvsI9hT5t90w23d3s87pudmd1rXJwfXoWKtTeKqhsmbx/Bc/15Zv3OZhFSnn83Ghv/qLfjmp+NXwqZmwTIXYAmYw4ZZsyieZl/CtvAcKiVeRwvBCRA7jEAmV/vnVhmRjcuxpkhg2jzmX2fCcQglmewGIZ+s25F8QW9AgkBCfDPMWBx3Rwafxeud7fWjH95/eBah5FBNLyfxagA78vux/mFgATIPQawXBmXsXL67mKardssL1gYD3nJCqlV8P7jva6+AAkgASoxAJm4HZZRptBa+2d2/OPAxSAazu8dz/oPGMOEgATIPQYgQ2iMwfL13virhEHGLOYFyCwzb89SCEiA3GNAO5FZL3Ms98d6njHOTP0AISABfP0AtlfoZY7V96mMp9YKQkAC5B4D2IC663nM7TFm9E8Pos/HfQhWK7B+hRCQAKoFCtc6zJhjPUacD/f6yumLKyaxc4SfwLzOCAkBCWCsgWeFvefuWP2P5wlYD7JuY3mLEJAAqgWCi3m08fzb+Ms/X9Hx3v8NsDbAWoDVKixvEQISQLVAGpO4rrO+P3se6y+wGMVqD30BEkACxPMANGQU11XGGPbkOlCf//X+v/4ZEgISIGq/AgwAHgcjMcT4RNcAAAAASUVORK5CYII=);
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, .3);
+}
+.chat_msg_box {
+	border-radius: 0 0 10px 10px;
+	white-space: pre-line;
+	word-break: break-word;
+	max-height: 260px;
+	padding: 10px;
+	font-size: 16px;
+	text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
+	color: #fff;
+}
+.chat_msg_box.image_only {
+	text-align: center;
+	padding: 10px 0 0 0;
+}
+.chat_msg_box.image_only:empty {
+  display: none;
+}
+
+
+/* Image Sizes */
+.cheer_icon, .twitch_emote, .dccon {
+  vertical-align: bottom;
+}
+.cheer_icon {
+  height: 1.25rem;
+}
+.twitch_emote {
+  height: 2rem;
+}
+.dccon {
+  height: 8.25rem;
+}
+
+/* Special Cases */
+@keyframes blinking-text {
+  from { color: #000; }
+  to { color: rgba(0, 0, 0, 0.5); }
+}
+.chat_subscribe_box,
+.chat_cheer_box	{ /* TODO: fix outgoing twip donations */
+	padding: 3px 0;
+	text-align: center;
+	animation-name: blink;
+	animation-duration: 1s;
+	animation-timing-function: steps(1, start);
+	animation-iteration-count: infinite;
+}
+.chat_cheer_text {
+	display: inline-block;
+	color: #0096ff;
+	font-weight: bold;
+}
+.chat_msg_box > .chat_cheer_box {
+  margin: -2.5rem -0.5rem 0 -0.5rem;
+}
+.chat_subscribe_box + .chat_msg_box:empty {
+  display: none;
+}
+
+/* Clip */
+.chat_clip_box {
+	/* .chat_clip_by의 absolute position을 위해 설정 */
+	position: relative;
+	padding: 10px 0 0 0;
+}
+.chat_clip_box.invalid {
+  height: 1.5rem;
+  text-align: center;
+  color: #acc;
+  text-shadow: none;
+}
+.chat_clip_box > img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.chat_clip_title, .chat_clip_by {
+  position: relative;
+}
+.chat_clip_title {
+	/* 가로세로로 모두 가운데정렬하기 위해 사용. .chat_clip_box img의 높이와 맞춰준다 */
+	line-height: 56px;
+	text-align: center;
+
+	/* 제목이 길 경우를 대비 */
+	white-space: pre;
+	overflow: hidden;
+	text-overflow: ellipsis;
+
+	text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
+	color: #fff;
+}
+.chat_clip_by {
+	/* .chat_clip_box의 우하단에 배치 */
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	/* config client로 조절하지 않는 글꼴크기이므로 .chat_msg_box에서 상속받아 조절 */
+	font-size: 0.7em;
+
+	text-shadow: 1px 1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, -1px -1px 0 #000;
+	color: #fff;
+}

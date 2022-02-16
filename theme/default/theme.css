@@ -90,7 +90,7 @@ body {
 .chat_msg_box {
   padding: 0.25rem 0.5rem;
   max-height: 15rem; /* 텍스트 영역 최대 높이 */
-  font-size: 19px;
+  font-size: 18px;
 }
 .chat_msg_box.image_only {
   text-align: center;
@@ -110,7 +110,7 @@ body {
   height: 2rem;
 }
 .dccon {
-  height: 8.25rem;
+  height: 7.45rem;
 }
 
 /* Special Cases */
@@ -183,4 +183,7 @@ body {
   text-align: right;
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.75);
+}
+img[src="https://raw.githubusercontent.com/chowonhee1235/dccon2/main/images/dccon/볼트공중.png"] {
+    animation: rotation .5s infinite linear;
 }
